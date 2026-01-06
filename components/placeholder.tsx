@@ -114,9 +114,10 @@ if (data.aiText) {
     {/* Judul yang melayang di tengah jika chat masih kosong */}
     {messages.length === 0 && (
       <div className="absolute inset-0 flex items-center justify-center -mt-20 pointer-events-none">
-        <h2 className="text-xl sm:text-5xl text-white font-bold opacity-20">
-          Ask Aceternity UI Anything
+        <h2 className="text-xl sm:text-5xl text-white font-bold opacity-20 uppercase tracking-widest">
+          Thunder AI
         </h2>
+        <img src="/thunder.webp" alt="Thunder AI Logo" className="w-20 h-20" />
       </div>
     )}
 
