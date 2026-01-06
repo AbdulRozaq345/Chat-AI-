@@ -47,7 +47,7 @@ export function SidebarDemo({
     <div
       className={cn(
         "mx-auto flex w-full flex-1 flex-col overflow-hidden ",
-        "h-screen" // for your use case, use `h-screen` instead of `h-[60vh]`
+        "h-screen"
       )}
     >
       <Sidebar open={open} setOpen={setOpen} animate={false}>
