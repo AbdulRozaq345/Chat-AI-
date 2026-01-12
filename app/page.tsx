@@ -1,7 +1,6 @@
 "use client";
 import { PlaceholdersAndVanishInputDemo } from "@/components/placeholder";
 import { SidebarDemo } from "@/components/sidebar";
-import { title } from "process";
 import{useState, useEffect} from "react";
 import { useSession } from "next-auth/react";
 
@@ -32,7 +31,7 @@ export default function Home() {
   } 
 
   const handleDeleteChat = (id: string) => {
-    const historyBaru = chatHistory.filter((c)=> c.id ! == id);
+    const historyBaru = chatHistory.filter((c)=> c.id !== id);
     setChatHistory(historyBaru);
     localStorage.setItem("ai_chat", JSON.stringify(historyBaru));
     if (activeChatId === id) {
