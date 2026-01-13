@@ -6,6 +6,7 @@ import { PlaceholdersAndVanishInput } from "./ui/placeholders-and-vanish-input";
 import {useState, useEffect, useRef} from "react";
 import React from "react";
 import { Content } from "next/font/google";
+import ReactMarkdown from "react-markdown";
 
 export function PlaceholdersAndVanishInputDemo({chatHistory, setChatHistory, activeChatId, setActiveChatId, userName}: any) {
     const [messages, setMessages] = useState<any[]>([]);
@@ -144,7 +145,13 @@ if (data.aiText) {
                 ? "bg-[#2f2f2f] text-white rounded-tr-none" 
                 : "bg-transparent text-zinc-200 border-none px-0"
               }`}>
-                {msg.content}
+                {msg.role === "assistant" ? (
+                  <div className="prose prose-invert prose-sm max-w-none prose-pre:bg-zinc-800 prose-pre:border prose-pre:border-zinc-700 prose-code:text-cyan-400">
+                  <ReactMarkdown >{msg.content}</ReactMarkdown>
+                  </div>
+                ) : (
+                  msg.content
+                )}
               </div>
             </div>
           </div>
